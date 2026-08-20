@@ -1,0 +1,37 @@
+# Import as a module
+from Perceptron_part1 import Perceptron
+import numpy as np
+
+
+# Initially with 2 inputs
+# Make our data
+
+
+logic_input = []
+logic_input.append(np.array([1, 0, 0]))
+logic_input.append(np.array([1, 0, 1]))
+logic_input.append(np.array([1, 1, 0]))
+logic_input.append(np.array([1, 1, 1]))
+
+# xor gate
+#logic_label = [0, 1, 1, 0]
+
+# and gate
+logic_label = [0, 0, 0, 1]
+
+
+# Create the class
+p = Perceptron(2+1)
+p.print_details()
+
+# Try predict
+p.test(logic_input, logic_label)
+print(p.weights)
+
+# Try Train
+#w_bar = w_bar + r(t-o)x_bar
+p.train(logic_input, logic_label)
+print(p.weights)
+
+# Try predict
+p.test(logic_input, logic_label)
